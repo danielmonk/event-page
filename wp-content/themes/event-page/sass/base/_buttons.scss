@@ -1,0 +1,40 @@
+.btn, input[type='submit'] {
+    padding: 14px 22px;
+    display: block;
+    color: $brand-color;
+    background-color: #fff;
+    border:2px solid #fff;
+    @include font-size(16);
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.25s ease-in-out;
+    text-decoration: none;
+    border-radius:20px;
+    text-align: center;
+    min-width:50%;
+    height:auto;
+    @media screen and (min-width: $breakpoint-sm) {
+        display: inline-block;
+    }
+    &:hover {
+        color: $btn-text;
+
+        text-decoration: none;
+        background: transparent;
+    }
+    &:focus {
+        color: $btn-text-hover;
+        background-color: $btn-bg-hover;
+    }
+
+}
+.btn--outline{
+    background-color:transparent;
+    border:2px solid #fff;
+    color:#fff;
+    &:hover{
+        background-color:#fff;
+        color:$brand-color;
+    }
+}

@@ -1,0 +1,81 @@
+.header {
+    padding: 5px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    //height: 70px;
+    background: $brand-color;
+    //box-shadow: 0 0 20px #000;
+    box-shadow: 0 50px 100px rgba(50,50,93,.15), 0 15px 35px rgba(50,50,93,.2), 0 5px 15px rgba(0,0,0,.12);
+    @media(min-width: $breakpoint-lg) {
+        position: absolute;
+        height: 120px;
+        padding:20px 0;
+        box-shadow:none;
+        &.headroom--not-top {
+            position: fixed;
+            transform: translateY(-100%);
+            &.headroom--pinned {
+                transform: translateY(0);
+                transition: transform 0.5s ease-in-out;
+            }
+        }
+    }
+    &>.container {
+        height: 100%;
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+    &__nav {
+        display:flex;
+        align-items:center;
+        justify-content:flex-end;
+    }
+}
+
+.brand {
+    width: 25%;
+    max-width: 200px;
+    display:flex;
+    height:100%;
+    align-items:center;
+    @media(min-width: $breakpoint-md) {
+        width: 50%;
+        max-width: none;
+        //padding: 20px 0 0;
+    }
+    &__logo,
+    &__logo img {
+        display: block;
+    }
+}
+
+.headroom--not-top.headroom--pinned .brand {
+    @media(min-width: $breakpoint-lg) {
+        padding: 0;
+    }
+}
+
+.page-header {
+    background: $brand-color;
+    padding: $sp-unit 0;
+    color: #fff;
+    text-align:center;
+    &__title {
+        margin: 56px 0 $sp-unit;
+    }
+}
+
+.breadcrumbs {
+    margin: 0 0 1em;
+    font-size: 0.8em;
+    a {
+        color: inherit;
+    }
+}

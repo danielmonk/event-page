@@ -1,0 +1,174 @@
+/**
+ * Blanket input styles for normalisation
+ */
+
+input,
+select,
+textarea {
+    background-color: transparent;
+    border: solid 1px $base-color;
+    border-radius: 0;
+    color: $base-color;
+    height: ($sp-unit * 1.5);
+    padding: 0 ($sp-unit / 2);
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+.gform_wrapper input:not([type='checkbox']){
+    width:100%!important;
+}
+
+.gform_wrapper .top_label .gfield_label, .gform_wrapper legend.gfield_label{
+    //@include font-size(16);
+    font-size:16px!important;
+    font-weight:400;
+}
+
+.gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label{
+    //@include font-size(12);
+    font-size: 12px!important;
+}
+
+.gform_wrapper .field_description_below .gfield_description, .gfield_consent_label, .ginput_container_consent{
+    font-size:14px!important;
+    line-height:1.5;
+}
+
+.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type=submit]{
+    font-size:16px!important;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    line-height: normal;
+    height: auto;
+    width: auto;
+    background-color: initial;
+    cursor: default;
+    appearance: checkbox;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+
+input[type="file"] {
+    line-height: normal;
+    height: auto;
+    padding: ($sp-unit / 4) ($sp-unit / 2);
+}
+
+input[type="submit"] {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+input[disabled] {
+    background-color: whitesmoke;
+    cursor: not-allowed;
+}
+
+select {
+    line-height: normal;
+    padding: 0;
+    padding-left: ($sp-unit / 2);
+}
+
+textarea {
+    min-height: ($sp-unit * 4);
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+
+/**
+ * Form utility classes
+ */
+
+.checkbox,
+.radio {
+    display: block;
+    padding-left: $sp-unit;
+    &.inline {
+        display: inline-block;
+    }
+    >input {
+        float: left;
+        margin-left: -($sp-unit);
+        margin-top: 4px;
+    }
+}
+
+.form__group {
+    display: block;
+    margin-bottom: $sp-unit;
+}
+
+.form__label {
+    display: block;
+    margin-bottom: ($sp-unit / 2);
+}
+
+
+/**
+ * Input Group
+ *
+ * Allows for prepend/append of elements 
+ * (such as icons) on an input.
+ */
+
+.input-group {
+    position: relative;
+    >input {
+        padding: 0 ($sp-unit * 2);
+    }
+    .input-group__addon {
+        line-height: ($sp-unit * 1.5);
+        height: ($sp-unit * 1.5);
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: ($sp-unit * 1.5);
+        &:first-child {
+            left: 0;
+        }
+        &:last-child {
+            right: 0;
+        }
+    }
+}
+
+.search-form {
+    // margin: 0 0 $sp-unit*2;
+}
+
+.search-wrap {
+    @extend %clearfix;
+    .screen-reader-text {
+        display: block;
+    }
+    .search-field {
+        margin: 0 0 $sp-unit/2;
+        @media screen and (min-width: $breakpoint-md) {
+            width: 75%;
+            margin: 0;
+            float: left;
+        }
+    }
+    .search-button {
+        padding: 0;
+        border: 0;
+        border-radius: 2px;
+        background-image: url('../../images/search.svg');
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: center center;
+        text-indent: -9999px;
+        @media screen and (min-width: $breakpoint-md) {
+            width: 20%;
+            float: right;
+        }
+    }
+}

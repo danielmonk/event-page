@@ -1,0 +1,54 @@
+$accordion-border-width: 1px;
+.accordion {
+    &__item {
+        border: $accordion-border-width solid $border-color;
+        background-color: $base-background-color;
+        margin-top: 2em;
+    }
+    &__title {
+        color: $brand-color;
+        font-weight: 700;
+        margin: 0;
+        padding: 1rem 5rem 1rem 1.5rem;
+        position: relative;
+        cursor: pointer;
+        @media screen and (min-width: $breakpoint-md) {
+            @include font-size(20);
+        }
+    }
+    &__handle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 3em;
+        background-color: $border-color;
+        border-left: $accordion-border-width solid $border-color;
+        svg {
+            width: 20px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -5px -10px;
+            fill: transparent;
+            stroke: #fff;
+            stroke-width: 3;
+            overflow: visible;
+            transform-origin: 50% 50%;
+            transform: rotate(0);
+            transition: 0.3s transform ease;
+        }
+    }
+    &__item.open &__handle svg {
+        transform: rotate(180deg);
+    }
+    &__content {
+        display: none;
+        padding: 1.5rem;
+        border-top: $accordion-border-width solid $border-color;
+        &>*:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
